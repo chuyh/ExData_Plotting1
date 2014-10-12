@@ -10,9 +10,8 @@ consumption4 <- subset(consumption4, Date >= "2007-02-01" & Date <= "2007-02-02"
 consumption4$Time <- paste(consumption4$Date, consumption4$Time)
 consumption4$Time <- strptime(consumption4$Time, "%Y-%m-%d %H:%M:%S")
 
-par(mfrow=c(2,2))
-
 png("plot4.png")
+par(mfcol=c(2,2))
 #1
 plot(consumption4$Time, consumption4$Global_active_power, type="l", ylab = "Global Active Power (kilowatts)", xlab="")
 
